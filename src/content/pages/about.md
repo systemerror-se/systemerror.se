@@ -1,0 +1,4 @@
+Title: About
+Category: About
+
+SystemError (Org. 802547-3193) is a Stockholm-based electronic music collective and non-profit organisation founded in 2024. Our mission is to celebrate and promote the diversity and creativity of electronic music, with a special focus on non-mainstream genres such as Disco, House, and Techno. We strive to offer a platform for emerging talents to be discovered, nurtured, and spotlighted. Through our event organization efforts, we aim to increase the accessibility of electronic music to a broader audience while also fostering an understanding of its cultural importance.

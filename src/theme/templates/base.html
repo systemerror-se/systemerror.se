@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="{% block html_lang %}{{ DEFAULT_LANG }}{% endblock html_lang %}">
+  <head>
+    {% block head %}
+      <title>{% block title %}{{ SITENAME|striptags }}{% endblock title %}</title>
+      <meta charset="utf-8" />
+      <meta name="generator" content="Pelican" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      {% if SITESUBTITLE %}
+        <meta name="description" content="{{ SITESUBTITLE }}" />
+      {% endif %}
+      {% if STYLESHEET_URL %}
+        <link rel="stylesheet" type="text/css" href="{{ STYLESHEET_URL }}" />
+      {% endif %}
+    {% endblock head %}
+  </head>
+
+  <body>
+    {% block body %}
+      <header>
+        {% block header %}
+          <hgroup><h1><a href="{{ SITEURL }}/">{{ SITENAME }}</a></h1>{% if SITESUBTITLE %}<p>{{ SITESUBTITLE }}</p>{% endif %}</hgroup>
+        {% endblock header %}
+        {% block nav %}
+          <nav><ul>
+            {% for title, link in MENUITEMS %}
+              <li><a href="{{ link }}">{{ title }}</a></li>
+            {% endfor %}
+            {% if DISPLAY_PAGES_ON_MENU %}
+              {% for p in pages %}
+                <li><a href="{{ SITEURL }}/{{ p.url }}" {% if p==page %} aria-current="page" {% endif %}>{{ p.title }}</a></li>
+              {% endfor %}
+            {% endif %}
+            {% if DISPLAY_CATEGORIES_ON_MENU %}
+              {% for cat, null in categories %}
+                <li><a href="{{ SITEURL }}/{{ cat.url }}" {% if cat==category %} aria-current="page" {% endif %}>{{ cat}}</a></li>
+              {% endfor %}
+            {% endif %}
+          </ul></nav>
+        {% endblock nav %}
+      </header>
+      <main>
+        {% block content %}
+        {% endblock content %}
+      </main>
+      <footer>
+        {% block footer %}
+        {% endblock footer %}
+      </footer>
+    {% endblock body %}
+  </body>
+</html>
+<link rel="stylesheet" type="text/css" href="{{ SITEURL }}/theme/css/style.css" />
